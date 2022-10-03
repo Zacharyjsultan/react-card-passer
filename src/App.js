@@ -7,7 +7,7 @@ import ExecutePassButton from './components/ExecutePassButton';
 import { useGame } from './context/GameContext';
 
 function App() {
-  const { playerOneHand, setPlayerOneHand, playerTwoHand, setPlayerThreeHand, setPlayerTwoHand, playerThreeHand, deck, setDeck, from, setFrom, to, setTo, selectedCard, setSelectedCard } = useGame(); 
+  const { playerOneHand, setPlayerOneHand, playerTwoHand, setPlayerThreeHand, setPlayerTwoHand, playerThreeHand, deck, setDeck, from, to, selectedCard, setSelectedCard } = useGame(); 
 
   function findCardIndex(value, suit, cards) {
     return cards.findIndex((card) => card.value === value && card.suit === suit);
@@ -43,34 +43,34 @@ function App() {
           to={to}
           player={1}
           hand={playerOneHand}
-          setFrom={setFrom}
+          
           selectedCard={selectedCard}
-          setTo={setTo}
+          
           setSelectedCard={setSelectedCard}
         />
         <Player
           to={to}
           player={2}
           hand={playerTwoHand}
-          setFrom={setFrom}
+          
           selectedCard={selectedCard}
-          setTo={setTo}
+          
           setSelectedCard={setSelectedCard}
         />
         <Player
           to={to}
           player={3}
           hand={playerThreeHand}
-          setFrom={setFrom}
+          
           selectedCard={selectedCard}
-          setTo={setTo}
+          
           setSelectedCard={setSelectedCard}
         />
         <CardList
           cards={deck}
           selectedCard={selectedCard}
           setSelectedCard={setSelectedCard}
-          setFrom={setFrom}
+          
           player={'deck'}
         />
       </section>
