@@ -11,10 +11,18 @@ const GameProvider = ({ children }) => {
   const [playerThreeHand, setPlayerThreeHand] = useState([]);
 
   return (
-    <GameContext.Provider value={{ deck, setDeck }}> {children} </GameContext.Provider>
+    <GameContext.Provider value={{ deck, setDeck, playerOneHand, setPlayerOneHand, playerTwoHand, setPlayerTwoHand, playerThreeHand, setPlayerThreeHand, selectedCard, setSelectedCard }}> {children} </GameContext.Provider>
   );
 };
 
 const useGame = () => {
-    
-}
+  const context = useContext(GameContext);
+
+  if (context === undefined) {
+    throw new Error('useGame must be used within this application');
+  }
+
+  return context;
+};
+
+export { GameProvider, useGame };
