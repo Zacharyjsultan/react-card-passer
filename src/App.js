@@ -40,37 +40,19 @@ function App() {
       <section>
         {/* if the player names are numbers, that will make our life easier later because we can reuse numbers as arrays. Note that this will make our app brittle! */}
         <Player
-          to={to}
           player={1}
           hand={playerOneHand}
-          
-          selectedCard={selectedCard}
-          
-          setSelectedCard={setSelectedCard}
         />
         <Player
-          to={to}
           player={2}
           hand={playerTwoHand}
-          
-          selectedCard={selectedCard}
-          
-          setSelectedCard={setSelectedCard}
         />
         <Player
-          to={to}
           player={3}
-          hand={playerThreeHand}
-          
-          selectedCard={selectedCard}
-          
-          setSelectedCard={setSelectedCard}
+          hand={playerThreeHand}      
         />
         <CardList
           cards={deck}
-          selectedCard={selectedCard}
-          setSelectedCard={setSelectedCard}
-          
           player={'deck'}
         />
       </section>
@@ -78,11 +60,6 @@ function App() {
         {selectedCard && (
           <ExecutePassButton
             passCard={passCard}
-            setFrom={setFrom}
-            from={from}
-            to={to}
-            selectedCard={selectedCard}
-            setSelectedCard={setSelectedCard}
           />
         )}
       </section>
